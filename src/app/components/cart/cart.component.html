@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Cart</h1>
+            <a class="nav-link" class="btn-primary btn" routerLinkActive="active" routerLink="/home">Go Back to Home</a>
+        </div>
+
+        <div class="container px-4 py-5 mx-auto">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-5">
+                            <h4 class="heading">Food Item</h4>
+                        </div>
+                        <div class="col-7">
+                            <div class="row text-right">
+
+                                <div class="col-4">
+                                    <h6 class="mt-2">Quantity</h6>
+                                </div>
+                                <div class="col-4">
+                                    <h6 class="mt-2">Price</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center border-top" *ngFor="let order of orders">
+
+                        <div class="col-5" *ngIf="order.quantity>0">
+                            <div class="row d-flex">
+                                <div class="book"> <img [src]="order.imageUrl" class="book-img"> </div>
+                                <div class="my-auto flex-column d-flex pad-left">
+                                    <h6 class="mob-text">{{order.restaurant}}</h6>
+                                    <p class="mob-text">{{order.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-auto col-7" *ngIf="order.quantity>0">
+                            <div class="row text-right">
+
+                                <div class="col-4">
+                                    <div class="row d-flex justify-content-end px-3">
+                                        <p class="mb-0" id="cnt1">{{order.quantity}}</p>
+
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <h6 class="mob-text">{{order.cost | currency:"INR"}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="row">
+    
+    
+                                    <div class="col-lg-4 mt-2">
+                                        <div class="row d-flex justify-content-between px-4">
+                                            <p class="mb-1 text-left">Subtotal</p>
+                                            <h6 class="mb-1 text-right">{{finalCost | currency:"INR"}}</h6>
+                                        </div>
+    
+                                        <div class="row d-flex justify-content-between px-4" id="tax">
+                                            <p class="mb-1 text-left">Total (tax included free)</p>
+                                            <h6 class="mb-1 text-right">{{finalCost | currency:"INR"}}</h6>
+                                        </div> <button class="btn-block btn-blue" (click)="proceedToOrders()"> <span> <span
+                                                    id="checkout">Checkout</span> </span> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+
+
+        </div>
+    </div>
+</div>

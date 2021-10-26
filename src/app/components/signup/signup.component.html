@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="text-center">Register Form</h1>
+            <form novalidate [formGroup]="registrationForm" (ngSubmit)="registrationForm.valid && onSubmit()"
+                name="registrationForm">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <!-- <input type="text" id="name" class="form-control" /> -->
+                            <label class="form-label" for="name">Name</label>
+                            <input type="text" class="form-control" id="fullName" formControlName="fullName"
+                                placeholder="Enter Full Name" [ngClass]="{
+              'is-invalid': isFormSubmitted && userFormControl.fullName.errors
+            }" />
+                            <div *ngIf="userFormControl.fullName.touched && userFormControl.fullName.invalid"
+                                class="invalid-feedback" style="display: block">
+                                <div *ngIf="userFormControl.fullName.errors?.required"> Full Name is required</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <!-- <input type="text" id="phonenumber" class="form-control" /> -->
+                            <label class="form-label" for="phonenumber">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNo" placeholder="Enter Phone No"
+                                name="phoneNo" formControlName="phoneNo" [ngClass]="{
+              'is-invalid': isFormSubmitted && userFormControl.phoneNo.errors
+            }" />
+                            <div *ngIf="userFormControl.phoneNo.touched && userFormControl.phoneNo.invalid"
+                                class="invalid-feedback" style="display: block">
+                                <div *ngIf="userFormControl.phoneNo.errors.required">Phone No is required</div>
+                                <div *ngIf="userFormControl.phoneNo.errors.minlength">
+                                    Phone no should be of 10 digits
+                                </div>
+                                <div *ngIf="userFormControl.phoneNo.errors.maxlength">
+                                    Phone no should be of 10 digits
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <!-- <input type="email" id="email" class="form-control" /> -->
+                    <label class="form-label" for="email">Email address</label>
+                    <input type="email" class="form-control" id="registeremail" placeholder="Enter email here"
+                        name="email" formControlName="email" [ngClass]="{
+                            'is-invalid': isFormSubmitted && userFormControl.email.errors
+                          }" />
+                    <div *ngIf="userFormControl.email.touched && userFormControl.email.invalid" class="invalid-feedback"
+                        style="display: block">
+                        <div *ngIf="userFormControl.email.errors.required">Email is required</div>
+
+                        <div *ngIf="userFormControl.email.errors.email">
+                            Please Enter valid Email
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <!-- <input type="password" id="password" class="form-control" /> -->
+                    <label class="form-label" for="pass">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="password" name="password"
+                        formControlName="password" [ngClass]="{
+                'is-invalid': isFormSubmitted && userFormControl.password.errors
+              }" />
+                    <div *ngIf="userFormControl.password.touched && userFormControl.password.invalid"
+                        class="invalid-feedback" style="display: block">
+                        <div *ngIf="userFormControl.password.errors?.required">Password is required</div>
+                        <div *ngIf="userFormControl.password.errors?.minlength"> Password should be of atleast 8
+                            characters</div>
+                        <div *ngIf="userFormControl.password.errors?.maxlength"> Password should be of atmost 12
+                            characters</div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>&nbsp;&nbsp;
+                <p>Already a member? <a routerLink="/login">Login</a></p>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p>or sign up with:</p>
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-google"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <i class="fab fa-github"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+                alt="register url" height="100%" width="115%">
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,82 @@
+.search-area {
+    background-size: cover;
+  }
+  .search-holder {
+    background-image: url("https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGZvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60");
+  
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ 
+  
+  .form {
+    position: relative;
+    width: 50%;
+  }
+  
+  .form .fa-search {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: lightgray;
+  }
+  
+  .form span {
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+  }
+  
+  .left-pan {
+    padding-left: 7px;
+  }
+  
+  .left-pan i {
+    padding-left: 10px;
+  }
+  
+  .form-input {
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+  }
+  
+  .form-input:focus {
+    box-shadow: none;
+    border: none;
+  }
+  .floatAtEnds {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .restaurants-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .cards-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 20vw;
+    margin: 20px;
+  }
+  
+  .content-title {
+    font-family: "Zen Kurenaido", sans-serif;
+    font-weight: bolder;
+  }
+  
