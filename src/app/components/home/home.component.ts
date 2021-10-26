@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   public isLoggedIn:boolean=false;
  
 
-  constructor(private restaurantService:RestaurantService) {
+  constructor(private restaurantService:RestaurantService,private router :Router) {
 
    }
 
@@ -25,5 +26,12 @@ export class HomeComponent implements OnInit {
   onAddToCart(id:string){
     this.restaurantService.addToCart(id);
   }
+
+  buyInstantly(id:string){
+    this.restaurantService.addToCart(id);
+    this.router.navigate(["/cart"]);
+  }
+
+
 
 }

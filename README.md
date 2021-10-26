@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+Steps to keep in mind for this project:
+
+For login : admin@admin.com and its password is ::: admin123
+
+or else first create a user and then login accordingly
+
+Beware on refresh data would be lost as not using the LocalStorage
+
+
+
+
+Created the require components and services and pipes.
+
+Routes were given in the routing module
+
+bootstrap was added gloabally
+
+fontAwesome icons got added through link
+
+Some common api data got used in the project as the mock data
+
+in the Network page
+
+
+
+
+
+

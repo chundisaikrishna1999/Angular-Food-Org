@@ -2,11 +2,14 @@
     <div class="row">
         <div class="col-xs-12">
             <h1>Cart</h1>
+            
             <a class="nav-link" class="btn-primary btn" routerLinkActive="active" routerLink="/home">Go Back to Home</a>
         </div>
 
+       
+
         <div class="container px-4 py-5 mx-auto">
-            <div class="row">
+            <div class="row"  *ngIf="totalItems>0 else showemptycart">
                 <div class="col-md-6">
                     <div class="row d-flex justify-content-center">
                         <div class="col-5">
@@ -57,19 +60,19 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="row">
-    
-    
+
+
                                     <div class="col-lg-4 mt-2">
                                         <div class="row d-flex justify-content-between px-4">
                                             <p class="mb-1 text-left">Subtotal</p>
                                             <h6 class="mb-1 text-right">{{finalCost | currency:"INR"}}</h6>
                                         </div>
-    
+
                                         <div class="row d-flex justify-content-between px-4" id="tax">
                                             <p class="mb-1 text-left">Total (tax included free)</p>
                                             <h6 class="mb-1 text-right">{{finalCost | currency:"INR"}}</h6>
-                                        </div> <button class="btn-block btn-blue" (click)="proceedToOrders()"> <span> <span
-                                                    id="checkout">Checkout</span> </span> </button>
+                                        </div> <button class="btn-block btn-blue" (click)="proceedToOrders()"> <span>
+                                                <span id="checkout">Checkout</span> </span> </button>
                                     </div>
                                 </div>
                             </div>
@@ -77,12 +80,9 @@
                     </div>
                 </div>
             </div>
-
-            
-
-
-
-
+            <ng-template #showemptycart>
+                <h1>You havent selected any items to be in cart</h1>
+            </ng-template>
         </div>
     </div>
 </div>

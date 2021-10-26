@@ -10,10 +10,9 @@
         <div class="form">
             <i class="fa fa-search"></i>
             <input type="text" class="form-control form-input" placeholder="Search for your favorite restaurant..."
-                [(ngModel)]="searchQuery" />
-
-            
+                [(ngModel)]="searchQuery" />            
         </div>
+       
     </div>
 
     <div class="row cards-holder">
@@ -35,7 +34,7 @@
                     <div class="floatAtEnds">
                         <a class="btn btn-primary" (click)="onAddToCart(restaurant.id)">Add to Cart </a>
                        
-                        <a class="btn btn-success" >Buy Now</a>
+                        <a class="btn btn-success" (click)="buyInstantly(restaurant.id)">Buy Now</a>
                     </div>
                 </div>
             </div>

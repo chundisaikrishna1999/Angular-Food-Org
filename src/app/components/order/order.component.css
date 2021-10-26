@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Assistant');
 
 body {
-    background: #eee;
+    background: lightyellow;
     font-family: Assistant, sans-serif
 }
 
@@ -14,13 +14,13 @@ body {
 }
 
 thead {
-    background: #dddcdc
+    background: yellow
 }
 
 .toggle-btn {
     width: 40px;
     height: 21px;
-    background: grey;
+    background: lightgreen;
     border-radius: 50px;
     padding: 3px;
     cursor: pointer;
